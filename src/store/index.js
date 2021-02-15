@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    searchText: null,
     tasks: [
       {
         id: 1,
@@ -75,6 +76,10 @@ export default new Vuex.Store({
     hideSnackbar(state) {
       state.snackbar.show = false;
     },
+
+    setSearchText(state, value) {
+      state.searchText = value;
+    },
   },
   actions: {
     addTask({ commit }, newTaskTitle) {
@@ -95,6 +100,16 @@ export default new Vuex.Store({
     updateTaskDueDate({ commit }, payload) {
       commit('updateTaskDueDate', payload);
       commit('showSnackbar', 'Due Date Updated!');
+    },
+  },
+  getters: {
+    tasksFiltered(state) {
+      if (!state.searchText) {
+        return state.tasks;
+      }
+      return state.tasks.filter((task) =>
+        task.title.toLowerCase().includes(state.searchText.toLowerCase())
+      );
     },
   },
 });
