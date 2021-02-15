@@ -4,12 +4,16 @@
     class="pa-3"
     outlined
     label="Add a new Task"
-    append-icon="mdi-plus-circle"
-    @click:append="addTask()"
     @keyup.enter="addTask()"
     clearable
     hide-details
-  ></v-text-field>
+  >
+    <template v-slot:append>
+      <v-icon @click="addTask()" :disabled="newTaskTitleInvalid"
+        >mdi-plus-circle</v-icon
+      >
+    </template>
+  </v-text-field>
 </template>
 
 <script>
@@ -19,10 +23,17 @@ export default {
       newTaskTitle: '',
     };
   },
+  computed: {
+    newTaskTitleInvalid() {
+      return !this.newTaskTitle;
+    },
+  },
   methods: {
     addTask() {
-      this.$store.dispatch('addTask', this.newTaskTitle);
-      this.newTaskTitle = '';
+      if (!this.newTaskTitleInvalid) {
+        this.$store.dispatch('addTask', this.newTaskTitle);
+        this.newTaskTitle = '';
+      }
     },
   },
 };
@@ -38,10 +49,18 @@ export default {
 }
 
 .v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light {
-  color: grey !important;
+  color: #26a69a !important;
 }
 
 .v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light.primary--text {
+  color: #26a69a !important;
+}
+
+.v-icon.notranslate.v-icon--disabled.v-icon--link.mdi.mdi-plus-circle.theme--light {
+  color: #26a69a !important;
+}
+
+.v-icon.notranslate.v-icon--link.mdi.mdi-close.theme--light.primary--text {
   color: #26a69a !important;
 }
 </style>
