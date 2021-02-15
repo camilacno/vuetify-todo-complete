@@ -1,0 +1,31 @@
+<template>
+  <v-dialog :value="true" persistent max-width="290">
+    <v-card>
+      <v-card-title class="headline">
+        Delete Task?
+      </v-card-title>
+      <v-card-text>Are you sure you want to delete the task?</v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn
+          color="red darken-1"
+          text
+          @click="$store.dispatch('deleteTask', task.id)"
+        >
+          DELETE
+        </v-btn>
+        <v-btn color="grey darken-3" text @click="$emit('close')">
+          CANCEL
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+</template>
+
+<script>
+export default {
+  props: ['task'],
+};
+</script>
+
+<style></style>
