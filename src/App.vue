@@ -27,7 +27,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar prominent app color="teal" dark src="cover.jpg">
+    <v-app-bar app color="teal" dark src="cover.jpg" height="150">
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
@@ -42,8 +42,12 @@
           <search-component />
         </v-row>
 
+        <v-row class="ml-0">
+          <v-app-bar-title class="text-h4">Vuetify Todo</v-app-bar-title>
+        </v-row>
+
         <v-row class="ml-0 mb-1">
-          <v-app-bar-title>Vuetify Todo</v-app-bar-title>
+          <live-date-time />
         </v-row>
       </v-container>
     </v-app-bar>
@@ -60,6 +64,7 @@ export default {
   components: {
     'snackbar-component': require('@/components/Shared/Snackbar.vue').default,
     'search-component': require('@/components/Tools/Search.vue').default,
+    'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,
   },
   data: () => ({
     drawer: null,
