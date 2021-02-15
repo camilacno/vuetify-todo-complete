@@ -41,11 +41,11 @@ export default {
 
 <style>
 .v-input.pa-3.v-input--hide-details.v-input--is-focused.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.primary--text {
-  color: teal !important;
+  color: #26a69a !important;
 }
 
 .v-label.v-label--active.theme--light.primary--text {
-  color: teal !important;
+  color: #26a69a !important;
 }
 
 .v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light {

@@ -16,6 +16,16 @@
             {{ task.title }}
           </v-list-item-title>
         </v-list-item-content>
+
+        <v-list-item-action>
+          <v-list-item-action-text class="date-area" v-if="task.dueDate">
+            <v-icon small color="grey">
+              mdi-calendar
+            </v-icon>
+            {{ task.dueDate | niceDate }}
+          </v-list-item-action-text>
+        </v-list-item-action>
+
         <v-list-item-action>
           <task-menu :task="task" />
         </v-list-item-action>
@@ -26,8 +36,15 @@
 </template>
 
 <script>
+import { format } from 'date-fns';
+
 export default {
   props: ['task'],
+  filters: {
+    niceDate(value) {
+      return format(new Date(value), 'MMM dd');
+    },
+  },
   components: {
     'dialog-delete': require('@/components/Todo/Dialogs/DialogDelete.vue')
       .default,
@@ -35,3 +52,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.date-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-area i {
+  margin-right: 0.5vw;
+}
+</style>
