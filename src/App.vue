@@ -56,12 +56,16 @@
 
     <v-main>
       <router-view></router-view>
+      <snackbar-component />
     </v-main>
   </v-app>
 </template>
 
 <script>
 export default {
+  components: {
+    'snackbar-component': require('@/components/Shared/Snackbar.vue').default,
+  },
   data: () => ({
     drawer: null,
     items: [
