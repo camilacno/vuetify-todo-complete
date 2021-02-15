@@ -27,3 +27,21 @@ export default {
   },
 };
 </script>
+
+<style>
+.v-input.pa-3.v-input--hide-details.v-input--is-focused.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.primary--text {
+  color: teal !important;
+}
+
+.v-label.v-label--active.theme--light.primary--text {
+  color: teal !important;
+}
+
+.v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light {
+  color: grey !important;
+}
+
+.v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light.primary--text {
+  color: #26a69a !important;
+}
+</style>

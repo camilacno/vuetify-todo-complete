@@ -1,9 +1,9 @@
 <template>
   <v-snackbar v-model="$store.state.snackbar.show">
-    {{ text }}
+    {{ $store.state.snackbar.text }}
 
     <template v-slot:action="{ attrs }">
-      <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
+      <v-btn text v-bind="attrs" @click="$store.commit('hideSnackbar')">
         Close
       </v-btn>
     </template>
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    text: `Task Added!`,
-  }),
-};
+export default {};
 </script>
 
-<style></style>
+<style>
+.v-snack__content {
+  color: white;
+}
+</style>
