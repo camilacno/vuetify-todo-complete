@@ -1,15 +1,15 @@
 <template>
   <v-text-field
     v-model="newTaskTitle"
-    class="pa-3"
+    class="field-add-task pa-3"
     outlined
-    label="Add a new Task"
+    placeholder="Add a new Task"
     @keyup.enter="addTask()"
     clearable
     hide-details
   >
     <template v-slot:append>
-      <v-icon @click="addTask()" :disabled="newTaskTitleInvalid"
+      <v-icon @click="addTask" :disabled="newTaskTitleInvalid" color="white"
         >mdi-plus-circle</v-icon
       >
     </template>
@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style>
+.field-add-task.v-input--is-focused .v-input__control {
+  background-color: rgb(255, 255, 255, 0.2);
+}
+
 .v-input.pa-3.v-input--hide-details.v-input--is-focused.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.primary--text {
   color: #26a69a !important;
 }

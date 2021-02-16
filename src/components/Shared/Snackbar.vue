@@ -18,4 +18,8 @@ export default {};
 .v-snack__content {
   color: white;
 }
+
+div.v-snack:not(.v-snack--absolute) {
+  height: 100%;
+}
 </style>

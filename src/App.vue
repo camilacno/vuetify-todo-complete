@@ -4,8 +4,8 @@
       <v-img
         class="pa-4"
         src="cover.jpg"
-        height="150"
-        gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+        :height="$route.path === '/' ? '200' : '170'"
+        gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.9)"
       >
         <v-avatar size="60" class="mb-2">
           <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
@@ -29,11 +29,17 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app color="teal" dark src="cover.jpg" height="150">
+    <v-app-bar
+      app
+      color="teal"
+      dark
+      src="cover.jpg"
+      :height="$route.path === '/' ? '200' : '170'"
+    >
       <template v-slot:img="{ props }">
         <v-img
           v-bind="props"
-          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+          gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.9)"
         ></v-img>
       </template>
 
@@ -44,14 +50,18 @@
           <search-component />
         </v-row>
 
-        <v-row class="ml-0">
-          <v-app-bar-title class="text-h4">{{
+        <v-row class="ml-0 mt-0">
+          <v-app-bar-title class="text-h5 font-weight-medium">{{
             $store.state.appTitle
           }}</v-app-bar-title>
         </v-row>
 
-        <v-row class="ml-0 mb-1">
+        <v-row class="ml-0 mt-0">
           <live-date-time />
+        </v-row>
+
+        <v-row class="mt-0" v-if="$route.path === '/'">
+          <field-add-task />
         </v-row>
       </v-container>
     </v-app-bar>
@@ -66,6 +76,7 @@
 <script>
 export default {
   components: {
+    'field-add-task': require('@/components/Todo/FieldAddTask.vue').default,
     'snackbar-component': require('@/components/Shared/Snackbar.vue').default,
     'search-component': require('@/components/Tools/Search.vue').default,
     'live-date-time': require('@/components/Tools/LiveDateTime.vue').default,

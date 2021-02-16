@@ -1,5 +1,5 @@
 <template>
-  <v-list flat class="pt-0">
+  <v-list flat class="pa-3">
     <draggable v-model="tasks" handle=".handle">
       <task v-for="task in tasks" :key="task.id" :task="task" />
     </draggable>

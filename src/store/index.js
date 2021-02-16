@@ -12,26 +12,7 @@ export default new Vuex.Store({
     sorting: false,
     appTitle: process.env.VUE_APP_TITLE,
     searchText: null,
-    tasks: [
-      // {
-      //   id: 1,
-      //   title: 'Feed the dogs',
-      //   done: false,
-      //   dueDate: '2021-02-14',
-      // },
-      // {
-      //   id: 2,
-      //   title: 'Play with the dogs',
-      //   done: false,
-      //   dueDate: '2021-02-13',
-      // },
-      // {
-      //   id: 3,
-      //   title: 'Dinner',
-      //   done: false,
-      //   dueDate: null,
-      // },
-    ],
+    tasks: [],
     snackbar: {
       show: false,
       text: '',

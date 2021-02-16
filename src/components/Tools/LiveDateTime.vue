@@ -1,6 +1,6 @@
 <template>
   <div class="text-h7">
-    <p>{{ date }}</p>
+    {{ date }}
   </div>
 </template>
 

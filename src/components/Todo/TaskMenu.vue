@@ -80,7 +80,11 @@ export default {
         title: 'Sort',
         icon: 'mdi-reorder-horizontal',
         click() {
-          this.$store.commit('toggleSorting');
+          if (!this.$store.state.searchText) {
+            this.$store.commit('toggleSorting');
+          } else {
+            this.$store.commit('showSnackbar', 'Not sortable while searching!');
+          }
         },
       },
     ],
@@ -93,7 +97,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .v-list-item__icon {
   margin-right: 1em !important;
 }

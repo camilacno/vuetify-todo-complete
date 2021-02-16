@@ -6,6 +6,7 @@
     :class="{ 'close-search': searchClosed && !$store.state.searchText }"
     @focus="searchClosed = false"
     @blur="searchClosed = true"
+    :disabled="$store.state.sorting"
     placeholder="Search"
     filled
     dense
