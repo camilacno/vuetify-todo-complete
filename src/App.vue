@@ -1,19 +1,23 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" :mobile-breakpoint="768" app>
+    <v-navigation-drawer
+      v-if="$store.state.user.name"
+      v-model="drawer"
+      :mobile-breakpoint="768"
+      app
+    >
       <v-img
         class="pa-4"
         src="cover.jpg"
         :height="$route.path === '/' ? '200' : '170'"
-        gradient="to top right, rgba(19,84,122,.9), rgba(128,208,199,.9)"
       >
-        <v-avatar size="60" class="mb-2">
+        <!-- <v-avatar size="60" class="mb-2">
           <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
         </v-avatar>
         <div class="white--text text-subtitle-1 font-weight-bold">
           Camila Nepomuceno
-        </div>
-        <div class="white--text text-subtitle-2">camila.cno</div>
+        </div> -->
+        <!-- <div class="white--text text-subtitle-2">camila.cno</div> -->
       </v-img>
 
       <v-list dense nav>
@@ -101,5 +105,9 @@ export default {
   flex-direction: column;
   align-items: stretch;
   margin: 0px !important;
+}
+
+.v-app-bar-title__content {
+  width: 100%;
 }
 </style>

@@ -13,6 +13,7 @@
     clearable
     prepend-inner-icon="mdi-magnify"
     hide-details
+    v-if="$store.state.user.name"
   ></v-text-field>
 </template>
 

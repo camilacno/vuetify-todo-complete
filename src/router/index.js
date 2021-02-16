@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Todo from '../views/Todo.vue';
+import Login from '../views/Login.vue';
 import goTo from 'vuetify/es5/services/goto';
 
 Vue.use(VueRouter);
@@ -10,6 +11,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Todo,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
   },
   {
     path: '/about',

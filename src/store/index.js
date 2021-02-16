@@ -17,6 +17,10 @@ export default new Vuex.Store({
       show: false,
       text: '',
     },
+    user: {
+      name: true,
+      picture: true,
+    },
   },
   mutations: {
     addTask(state, newTask) {

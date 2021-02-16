@@ -43,28 +43,4 @@ export default {
 .field-add-task.v-input--is-focused .v-input__control {
   background-color: rgb(255, 255, 255, 0.2);
 }
-
-.v-input.pa-3.v-input--hide-details.v-input--is-focused.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.primary--text {
-  color: #26a69a !important;
-}
-
-.v-label.v-label--active.theme--light.primary--text {
-  color: #26a69a !important;
-}
-
-.v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light {
-  color: #26a69a !important;
-}
-
-.v-icon.notranslate.v-icon--link.mdi.mdi-plus-circle.theme--light.primary--text {
-  color: #26a69a !important;
-}
-
-.v-icon.notranslate.v-icon--disabled.v-icon--link.mdi.mdi-plus-circle.theme--light {
-  color: #26a69a !important;
-}
-
-.v-icon.notranslate.v-icon--link.mdi.mdi-close.theme--light.primary--text {
-  color: #26a69a !important;
-}
 </style>
