@@ -64,7 +64,7 @@ export default {};
   border-color: white !important;
 }
 
-.v-application p {
+.login p {
   margin-bottom: 0px;
   text-align: center;
   max-width: 200px;
