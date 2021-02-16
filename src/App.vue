@@ -45,7 +45,9 @@
         </v-row>
 
         <v-row class="ml-0">
-          <v-app-bar-title class="text-h4">Vuetify Todo</v-app-bar-title>
+          <v-app-bar-title class="text-h4">{{
+            $store.state.appTitle
+          }}</v-app-bar-title>
         </v-row>
 
         <v-row class="ml-0 mb-1">
