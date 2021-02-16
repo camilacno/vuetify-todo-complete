@@ -3,6 +3,8 @@
     <v-list-item
       @click="$store.commit('doneTask', task.id)"
       :class="{ 'teal lighten-5': task.done }"
+      class="white"
+      :ripple="false"
     >
       <template v-slot:default>
         <v-list-item-action>
@@ -28,6 +30,12 @@
 
         <v-list-item-action>
           <task-menu :task="task" />
+        </v-list-item-action>
+
+        <v-list-item-action v-if="$store.state.sorting">
+          <v-btn color="teal lighten-1" class="handle" icon>
+            <v-icon>mdi-reorder-horizontal</v-icon>
+          </v-btn>
         </v-list-item-action>
       </template>
     </v-list-item>
@@ -63,5 +71,13 @@ export default {
 
 .date-area i {
   margin-right: 0.5vw;
+}
+
+.sortable-ghost {
+  opacity: 0;
+}
+
+.sortable-drag {
+  box-shadow: 0 0 8px rgb(38, 166, 154, 0.3);
 }
 </style>

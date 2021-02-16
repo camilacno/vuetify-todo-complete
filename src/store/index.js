@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    sorting: false,
     appTitle: process.env.VUE_APP_TITLE,
     searchText: null,
     tasks: [
@@ -62,6 +63,10 @@ export default new Vuex.Store({
       task.dueDate = payload.dueDate;
     },
 
+    orderTasks(state, tasks) {
+      state.tasks = tasks;
+    },
+
     showSnackbar(state, text) {
       let timeout = 0;
       if (state.snackbar.show) {
@@ -80,6 +85,10 @@ export default new Vuex.Store({
 
     setSearchText(state, value) {
       state.searchText = value;
+    },
+
+    toggleSorting(state) {
+      state.sorting = !state.sorting;
     },
   },
   actions: {
